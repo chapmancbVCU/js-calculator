@@ -41,11 +41,12 @@ h1 {
     margin: 2px;
 }
 
-/* Styling for each row of buttons. */
+/* Styling for each row of buttons */
 .btn-group {
-    
+    margin-bottom: 3px;
 }
 
+/* Styling that applies to all buttons. */
 button {
     font-size: 30px;
     font-weight: bold;
