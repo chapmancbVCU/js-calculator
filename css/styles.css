@@ -18,6 +18,7 @@ h1 {
 
 #calculator-container {
     border: rgb(77, 75, 75) solid 10px;
+    border-radius: 5px;;
     background-color: black;
     width: 650px;
     margin-left: auto;
@@ -28,6 +29,7 @@ h1 {
     height: 100px;
     background-color: rgb(189, 189, 189);
     border: black solid 5px;
+    border-radius: 5px;
 }
 
 .key{
