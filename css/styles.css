@@ -5,3 +5,13 @@
    Description: CSS Stylesheet for calculator project.
 ******************************************************************************/
 
+/******************************************************************************
+Classes and element selectors as encountered in order throughout the page.
+******************************************************************************/
+body {
+    background-color: antiquewhite;
+}
+
+h1 {
+    text-align: center;
+}
