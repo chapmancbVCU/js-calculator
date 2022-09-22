@@ -60,6 +60,9 @@ button {
     border-radius: 10px;
 }
 
+.operator {
+    background-color: orange;
+}
 /* Styling for 0 key button. */
 .rectangle-button {
     height: 80px;
