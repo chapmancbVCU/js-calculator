@@ -48,9 +48,15 @@ h1 {
 
 /* Styling for settings that applies to all buttons. */
 .square-button {
-    /* We want buttons to look like a rectangle. */
+    /* We want buttons to look like a slight rectangle. */
     height: 80px;
     width: 100px;
     border-radius: 10px;
-    
+}
+
+/* Styling for 0 key button. */
+.rectangle-button {
+    height: 80px;
+    width: 204px;
+    border-radius: 10px;
 }
