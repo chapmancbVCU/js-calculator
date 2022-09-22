@@ -96,3 +96,15 @@ button {
     width: 204px;
     border-radius: 10px;
 }
+
+/* We want space between footer and bottom of main. */
+footer {
+    margin-top: 50px;  
+}
+
+/* Styling for text inside of footer. */
+.footer-text {
+    margin: 5px;
+    text-align: center;
+    font-size: 20px;
+}
