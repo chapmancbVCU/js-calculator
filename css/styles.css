@@ -46,6 +46,11 @@ h1 {
     
 }
 
+button {
+    font-size: 30px;
+    font-weight: bold;
+}
+
 /* Styling for settings that applies to all buttons. */
 .square-button {
     /* We want buttons to look like a slight rectangle. */
