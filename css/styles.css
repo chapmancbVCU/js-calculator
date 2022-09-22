@@ -8,23 +8,27 @@
 /******************************************************************************
 Classes and element selectors as encountered in order throughout the page.
 ******************************************************************************/
+/* Style body of page. */
 body {
     background-color: antiquewhite;
 }
 
+/* Style the section containing title. */
 h1 {
     text-align: center;
 }
 
+/* Style container containing calculator. */
 #calculator-container {
     border: rgb(77, 75, 75) solid 10px;
     border-radius: 5px;;
     background-color: black;
-    width: 650px;
+    width: 416px;
     margin-left: auto;
     margin-right: auto;
 }
 
+/* Styling for the calculator's output. */
 #output-panel {
     height: 100px;
     background-color: rgb(189, 189, 189);
@@ -32,6 +36,20 @@ h1 {
     border-radius: 5px;
 }
 
-.key{
-    height: 50px;
+/* Styling for keypad area. */
+#keypad {
+    margin: 2px;
+}
+
+/* Styling for each row of buttons. */
+.btn-group {
+    
+}
+
+/* Styling for settings that applies to all buttons. */
+button {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    
 }
