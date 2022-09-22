@@ -65,14 +65,29 @@ button {
     background-color: orange;
 }
 
+/* Set color of operator buttons when clicked. */
+.operator-button:active {
+    background-color: rgb(245, 200, 117);
+}
+
 /* Styling for buttons that contain numbers and the decimal place. */
 .number-and-decimal-button {
     background-color: teal;
 }
 
+/* Set color of number and decimal buttons when clicked. */
+.number-and-decimal-button:active {
+    background-color: rgb(166, 230, 230);
+}
+
 /* Set styling for AC, +/-, and & buttons. */
 .function-button {
     background-color: rgb(60, 150, 220);
+}
+
+/* Set styling for AC, +/-, and % buttons when clicked. */
+.function-button:active {
+    background-color: rgb(117, 182, 231);
 }
 
 /* Styling for 0 key button. */
