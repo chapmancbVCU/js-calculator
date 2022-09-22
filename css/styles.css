@@ -65,6 +65,11 @@ button {
     background-color: orange;
 }
 
+/* Styling for buttons that contain numbers and the decimal place. */
+.number-and-decimal-button {
+    background-color: teal;
+}
+
 /* Styling for 0 key button. */
 .rectangle-button {
     height: 80px;
