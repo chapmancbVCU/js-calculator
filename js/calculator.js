@@ -13,10 +13,17 @@ let firstOperand = "";
 let secondOperand = "";
 let isNegative = false;
 
-// Setup event listener for button click.
-const buttonSelect = document.querySelectorAll('.number');
-buttonSelect.forEach(button => button.addEventListener('click', function() {
+/******************************************************************************
+ *        Name: positiveNumBtnSelect Event Listener
+ * Description: Listens for input to buttons that are positive integers
+ *   Arguments: 
+ *     Returns: 
+ *****************************************************************************/
+const positiveNumBtnSelect = document.querySelectorAll('[id^="number-"]');
+positiveNumBtnSelect.forEach(button => button.addEventListener('click', 
+    function() {
     let newValue = this.getAttribute('value');
+    
     // Limite size of operand to 9 digits.
     if(outputString.length < 9) {
         outputString += newValue;    
@@ -34,3 +41,13 @@ function setPositiveOrNegative(currentValue, newValue) {
         return "-" + currentValue;
     }
 }
+
+
+
+
+/******************************************************************************
+ *        Name: 
+ * Description: 
+ *   Arguments: 
+ *     Returns: 
+ *****************************************************************************/
