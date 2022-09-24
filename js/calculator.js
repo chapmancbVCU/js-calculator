@@ -12,14 +12,16 @@ let outputString = "";
 let firstOperand = "";
 let secondOperand = "";
 let isNegative = false;
+const positiveNumBtnSelect = document.querySelectorAll('[id^="number-"]');
+const zeroNumBtnSelect = document.querySelector('#num-0-button');
+
 
 /******************************************************************************
  *        Name: positiveNumBtnSelect Event Listener
- * Description: Listens for input to buttons that are positive integers
+ * Description: Listens for input to buttons that are positive integers.
  *   Arguments: 
  *     Returns: 
  *****************************************************************************/
-const positiveNumBtnSelect = document.querySelectorAll('[id^="number-"]');
 positiveNumBtnSelect.forEach(button => button.addEventListener('click', 
     function() {
     let newValue = this.getAttribute('value');
@@ -30,6 +32,25 @@ positiveNumBtnSelect.forEach(button => button.addEventListener('click',
         document.getElementById('output').innerHTML = outputString;
     }
 }));
+
+
+/******************************************************************************
+ *        Name: zeroNumBtnSelect Event Listener
+ * Description: Listens for input from the number 0 button.
+ *   Arguments: 
+ *     Returns: 
+ *****************************************************************************/
+ zeroNumBtnSelect.addEventListener('click', function() {
+    let newValue = this.getAttribute('value');
+    
+    // Limite size of operand to 9 digits.
+    if(outputString == "" || outputString == "0") {
+        document.getElementById('output').innerHTML = 0;
+    } else if(outputString.length < 9) {
+        outputString += newValue;    
+        document.getElementById('output').innerHTML = outputString;
+    }
+});
 
 
 
