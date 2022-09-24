@@ -13,12 +13,14 @@ let firstOperand = "";
 let secondOperand = "";
 let isNegative = false;
 const positiveNumBtnSelect = document.querySelectorAll('[id^="number-"]');
-const zeroNumBtnSelect = document.querySelector('#num-0-button');
+const zeroBtnSelect = document.querySelector('#num-0-button');
+const acBtnSelect = document.querySelector('#ac-op-button');
 
 
 /******************************************************************************
  *        Name: positiveNumBtnSelect Event Listener
- * Description: Listens for input to buttons that are positive integers.
+ * Description: Listens for input to buttons that are positive integers.  When
+ *              input is detcted the ouput is updated to include new number.
  *   Arguments: 
  *     Returns: 
  *****************************************************************************/
@@ -26,30 +28,46 @@ positiveNumBtnSelect.forEach(button => button.addEventListener('click',
     function() {
     let newValue = this.getAttribute('value');
     
-    // Limite size of operand to 9 digits.
-    if(outputString.length < 9) {
+    /* Take care of case when there is a leading 0 after pressing AC button
+       and limit size of operand to 9 digits. */
+    if(outputString == 0) {
+        outputString = newValue;
+    } else if(outputString.length < 9) {
         outputString += newValue;    
-        document.getElementById('output').innerHTML = outputString;
     }
+    document.getElementById('output').innerHTML = outputString;
 }));
 
 
 /******************************************************************************
  *        Name: zeroNumBtnSelect Event Listener
- * Description: Listens for input from the number 0 button.
+ * Description: Listens for input from the number 0 button.  When no number
  *   Arguments: 
  *     Returns: 
  *****************************************************************************/
- zeroNumBtnSelect.addEventListener('click', function() {
+ zeroBtnSelect.addEventListener('click', function() {
     let newValue = this.getAttribute('value');
     
-    // Limite size of operand to 9 digits.
+    // Limit size of operand to 9 digits.
     if(outputString == "" || outputString == "0") {
         document.getElementById('output').innerHTML = 0;
     } else if(outputString.length < 9) {
         outputString += newValue;    
         document.getElementById('output').innerHTML = outputString;
     }
+});
+
+
+
+/******************************************************************************
+ *        Name: acBtnSelect Event Listener
+ * Description: Listens for input from the AC button.  Sets output to 0.
+ *   Arguments: 
+ *     Returns: 
+ *****************************************************************************/
+ acBtnSelect.addEventListener('click', function() {
+    outputString = "0";    
+    document.getElementById('output').innerHTML = outputString;
 });
 
 
