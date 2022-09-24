@@ -8,28 +8,23 @@
 /******************************************************************************
  * GLOBAL VARIABLES
  *****************************************************************************/
-let value = "";
+let outputString = "";
 let firstOperand = "";
 let secondOperand = "";
-
+let isNegative = false;
 
 // Setup event listener for button click.
-const buttonSelect = document.querySelectorAll('button');
+const buttonSelect = document.querySelectorAll('.number');
 buttonSelect.forEach(button => button.addEventListener('click', function() {
     let newValue = this.getAttribute('value');
-    console.log(`value: ${value}`);
-    
     // Limite size of operand to 9 digits.
-    if(value.length < 9) {
-        if(newValue == "+/-") {
-            value = setPositiveOrNegative(value, newValue);
-            console.log(newValue);
-        } else {
-            value += newValue;
-        }
-        document.getElementById('output').innerHTML = value;
+    if(outputString.length < 9) {
+        outputString += newValue;    
+        document.getElementById('output').innerHTML = outputString;
     }
 }));
+
+
 
 function setPositiveOrNegative(currentValue, newValue) {
     if(currentValue[0] === "-") {
