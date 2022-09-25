@@ -8,16 +8,22 @@
 /******************************************************************************
  * GLOBAL VARIABLES
  *****************************************************************************/
-let outputString = "0";
-let number1 = "";
 let answer = "";
 let isNegative = false;
+let outputString = "0";
+let number1 = "";
+const acBtnSelect = document.querySelector('#ac-op-button');
+const addBtnSelect = document.querySelector('#addition-op-button');
+const decimalBtnSelect = document.querySelector('#decimal-place-button');
+const changeSignBtnSelect = document.querySelector('#change-sign-button');
 const positiveNumBtnSelect = document.querySelectorAll('[id^="number-"]');
 const zeroBtnSelect = document.querySelector('#num-0-button');
-const acBtnSelect = document.querySelector('#ac-op-button');
-const changeSignBtnSelect = document.querySelector('#change-sign-button');
-const decimalBtnSelect = document.querySelector('#decimal-place-button');
 
+
+const operation = {
+    state: 'none',
+    opButtonClicked: false,
+}
 
 /******************************************************************************
  *        Name: acBtnSelect Event Listener
@@ -29,6 +35,24 @@ const decimalBtnSelect = document.querySelector('#decimal-place-button');
     outputString = "0";   
     isNegative = false; 
     document.getElementById('output').innerHTML = outputString;
+});
+
+
+/******************************************************************************
+ *        Name: 
+ * Description: 
+ *   Arguments: 
+ *     Returns: 
+ *****************************************************************************/
+addBtnSelect.addEventListener('click', function() {
+    operation.state = "add";
+    console.log(operation.state);
+    if(number1 == "") {
+        operation.opButtonClicked = true;
+        number1 = outputString;
+    } else {
+        calculate(number1, outputString);
+    }
 });
 
 
@@ -48,6 +72,10 @@ changeSignBtnSelect.addEventListener('click', function() {
     }
 });
 
+
+function calculate(first, second) {
+
+}
 
 
 /******************************************************************************
