@@ -34,6 +34,8 @@ const operation = {
  acBtnSelect.addEventListener('click', function() {
     outputString = "0";   
     isNegative = false; 
+    number1 = ""
+    operation.state = "none";
     document.getElementById('output').innerHTML = outputString;
 });
 
@@ -74,7 +76,11 @@ changeSignBtnSelect.addEventListener('click', function() {
 
 
 function calculate(first, second) {
-
+    if(operation.state == "add") {
+        outputString = parseFloat(first) + parseFloat(second);
+        document.getElementById('output').innerHTML = outputString;
+        operation.state = "none";
+    }
 }
 
 
