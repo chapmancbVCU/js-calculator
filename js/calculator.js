@@ -8,7 +8,7 @@
 /******************************************************************************
  * GLOBAL VARIABLES
  *****************************************************************************/
-let outputString = "";
+let outputString = "0";
 let number1 = "";
 let answer = "";
 let isNegative = false;
@@ -26,7 +26,8 @@ const decimalBtnSelect = document.querySelector('#decimal-place-button');
  *     Returns: 
  *****************************************************************************/
  acBtnSelect.addEventListener('click', function() {
-    outputString = "0";    
+    outputString = "0";   
+    isNegative = false; 
     document.getElementById('output').innerHTML = outputString;
 });
 
@@ -38,10 +39,13 @@ const decimalBtnSelect = document.querySelector('#decimal-place-button');
  *     Returns: 
  *****************************************************************************/
 changeSignBtnSelect.addEventListener('click', function() {
-    let temp = -1 * parseFloat(outputString);
-    outputString = temp.toString();
-    isNegative = !isNegative;
-    document.getElementById('output').innerHTML = outputString;
+    if(outputString != "0" && outputString != 0) {
+        let temp = -1 * parseFloat(outputString);
+        outputString = temp.toString();
+        isNegative = !isNegative;
+        document.getElementById('output').innerHTML = outputString;
+        console.log(`isNegative: ${isNegative}`)
+    }
 });
 
 
@@ -92,7 +96,8 @@ positiveNumBtnSelect.forEach(button => button.addEventListener('click',
 
 /******************************************************************************
  *        Name: zeroNumBtnSelect Event Listener
- * Description: Listens for input from the number 0 button.  When no number
+ * Description: Listens for input from the number 0 button.  When no non-zero
+ *              number is selected the display prints 0.
  *   Arguments: 
  *     Returns: 
  *****************************************************************************/
