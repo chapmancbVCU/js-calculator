@@ -47,8 +47,9 @@ changeSignBtnSelect.addEventListener('click', function() {
 
 
 /******************************************************************************
- *        Name: 
- * Description: 
+ *        Name: decimalBtnSelect Even Listener
+ * Description: Checks for input from decimal button and updates display.  If
+ *              display is 0 then output becomes "0.".
  *   Arguments: 
  *     Returns: 
  *****************************************************************************/
@@ -60,11 +61,11 @@ decimalBtnSelect.addEventListener('click', function() {
         } else if(outputString.length < 9 && isNegative == false || 
                 outputString.length < 10 && isNegative == true) {
             outputString = outputString + ".";    
-           // document.getElementById('output').innerHTML = outputString;
         }
         document.getElementById('output').innerHTML = outputString;
     }
 })
+
 
 /******************************************************************************
  *        Name: positiveNumBtnSelect Event Listener
