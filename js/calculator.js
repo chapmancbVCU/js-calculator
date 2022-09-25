@@ -16,7 +16,55 @@ const positiveNumBtnSelect = document.querySelectorAll('[id^="number-"]');
 const zeroBtnSelect = document.querySelector('#num-0-button');
 const acBtnSelect = document.querySelector('#ac-op-button');
 const changeSignBtnSelect = document.querySelector('#change-sign-button');
+const decimalBtnSelect = document.querySelector('#decimal-place-button');
 
+
+/******************************************************************************
+ *        Name: acBtnSelect Event Listener
+ * Description: Listens for input from the AC button.  Sets output to 0.
+ *   Arguments: 
+ *     Returns: 
+ *****************************************************************************/
+ acBtnSelect.addEventListener('click', function() {
+    outputString = "0";    
+    document.getElementById('output').innerHTML = outputString;
+});
+
+
+/******************************************************************************
+ *        Name: changeSignBtn Event Listener
+ * Description: Listens for input from +/- button and updates output.
+ *   Arguments: 
+ *     Returns: 
+ *****************************************************************************/
+changeSignBtnSelect.addEventListener('click', function() {
+    let temp = -1 * parseFloat(outputString);
+    outputString = temp.toString();
+    isNegative = !isNegative;
+    document.getElementById('output').innerHTML = outputString;
+});
+
+
+
+/******************************************************************************
+ *        Name: 
+ * Description: 
+ *   Arguments: 
+ *     Returns: 
+ *****************************************************************************/
+decimalBtnSelect.addEventListener('click', function() {
+    if(!outputString.includes('.')) {
+        // Limit size of operand to 9 digits.
+        if(outputString == "" || outputString == "0") {
+            outputString = "0."
+        } else if(outputString.length < 9 && isNegative == false || 
+                outputString.length < 10 && isNegative == true) {
+            outputString = outputString + ".";    
+           // document.getElementById('output').innerHTML = outputString;
+        }
+        document.getElementById('output').innerHTML = outputString;
+    }
+})
 
 /******************************************************************************
  *        Name: positiveNumBtnSelect Event Listener
@@ -62,30 +110,7 @@ positiveNumBtnSelect.forEach(button => button.addEventListener('click',
 
 
 
-/******************************************************************************
- *        Name: acBtnSelect Event Listener
- * Description: Listens for input from the AC button.  Sets output to 0.
- *   Arguments: 
- *     Returns: 
- *****************************************************************************/
- acBtnSelect.addEventListener('click', function() {
-    outputString = "0";    
-    document.getElementById('output').innerHTML = outputString;
-});
 
-
-/******************************************************************************
- *        Name: changeSignBtn Event Listener
- * Description: Listens for input from +/- button and updates output.
- *   Arguments: 
- *     Returns: 
- *****************************************************************************/
-changeSignBtnSelect.addEventListener('click', function() {
-    let temp = -1 * parseFloat(outputString);
-    outputString = temp.toString();
-    isNegative = !isNegative;
-    document.getElementById('output').innerHTML = outputString;
-});
 
 
 
