@@ -79,7 +79,7 @@ positiveNumBtnSelect.forEach(button => button.addEventListener('click',
     
     /* Take care of case when there is a leading 0 after pressing AC button
        and limit size of operand to 9 digits. */
-    if(outputString == 0) {
+    if(outputString == "0") {
         outputString = newValue;
     } else if(outputString.length < 9 && isNegative == false || 
             outputString.length < 10 && isNegative == true) {
