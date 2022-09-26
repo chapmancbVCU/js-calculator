@@ -25,6 +25,13 @@ const operation = {
     opButtonClicked: false,
 }
 
+
+function report() {
+    console.log(`outputString: ${outputString}`);
+    console.log(`number1: ${number1}`);
+}
+
+
 /******************************************************************************
  *        Name: acBtnSelect Event Listener
  * Description: Listens for input from the AC button.  Sets output to 0.
@@ -79,7 +86,7 @@ function calculate(first, second) {
     if(operation.state == "add") {
         outputString = parseFloat(first) + parseFloat(second);
         document.getElementById('output').innerHTML = outputString;
-        operation.state = "none";
+        number1 = outputString.toString();
     }
 }
 
@@ -122,12 +129,12 @@ positiveNumBtnSelect.forEach(button => button.addEventListener('click',
         if(outputString == "0") {
             outputString = newValue;
         } else if(outputString.length < 9 && isNegative == false || 
-                outputString.length < 10 && isNegative == true) {
+            outputString.length < 10 && isNegative == true) {
             outputString += newValue;    
         }
     } else {
         outputString = newValue;
-        operation.state = "none";
+       
     }
     document.getElementById('output').innerHTML = outputString;
 }));
