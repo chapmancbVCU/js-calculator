@@ -97,7 +97,7 @@ changeSignBtnSelect.addEventListener('click', function() {
     if(outputString != "0" && outputString != 0) {
         let temp = -1 * parseFloat(outputString);
         outputString = temp.toString();
-        isNegative = !isNegative;
+        isNegative = isOutputNegative(outputString);
         document.getElementById('output').innerHTML = outputString;
         console.log(`isNegative: ${isNegative}`)
     }
