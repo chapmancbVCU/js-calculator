@@ -75,13 +75,15 @@ addBtnSelect.addEventListener('click', function() {
 function calculate(first, second) {
     if(operation.state == "add") {
         outputString = parseFloat(first) + parseFloat(second);
-        document.getElementById('output').innerHTML = outputString;
         number1 = outputString.toString();
     } else if(operation.state == "sub") {
         outputString = parseFloat(first) - parseFloat(second);
-        document.getElementById('output').innerHTML = outputString;
         number1 = outputString.toString();
     }
+
+    isNegative = isOutputNegative(outputString);
+    outputString = outputString.toString();
+    document.getElementById('output').innerHTML = outputString;
 }
 
 
@@ -121,6 +123,16 @@ decimalBtnSelect.addEventListener('click', function() {
         document.getElementById('output').innerHTML = outputString;
     }
 })
+
+
+function isOutputNegative(outputNumber) {
+    let outputTest = parseFloat(outputNumber);
+    if(outputTest < 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 
 /******************************************************************************
