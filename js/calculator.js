@@ -17,6 +17,7 @@ const addBtnSelect = document.querySelector('#addition-op-button');
 const decimalBtnSelect = document.querySelector('#decimal-place-button');
 const changeSignBtnSelect = document.querySelector('#change-sign-button');
 const positiveNumBtnSelect = document.querySelectorAll('[id^="number-"]');
+const subBtnSelect = document.querySelector('#subtraction-op-button');
 const zeroBtnSelect = document.querySelector('#num-0-button');
 
 
@@ -66,6 +67,25 @@ addBtnSelect.addEventListener('click', function() {
 
 
 /******************************************************************************
+ *        Name: 
+ * Description: 
+ *   Arguments: 
+ *     Returns: 
+ *****************************************************************************/
+function calculate(first, second) {
+    if(operation.state == "add") {
+        outputString = parseFloat(first) + parseFloat(second);
+        document.getElementById('output').innerHTML = outputString;
+        number1 = outputString.toString();
+    } else if(operation.state == "sub") {
+        outputString = parseFloat(first) - parseFloat(second);
+        document.getElementById('output').innerHTML = outputString;
+        number1 = outputString.toString();
+    }
+}
+
+
+/******************************************************************************
  *        Name: changeSignBtn Event Listener
  * Description: Listens for input from +/- button and updates output.
  *   Arguments: 
@@ -80,15 +100,6 @@ changeSignBtnSelect.addEventListener('click', function() {
         console.log(`isNegative: ${isNegative}`)
     }
 });
-
-
-function calculate(first, second) {
-    if(operation.state == "add") {
-        outputString = parseFloat(first) + parseFloat(second);
-        document.getElementById('output').innerHTML = outputString;
-        number1 = outputString.toString();
-    }
-}
 
 
 /******************************************************************************
@@ -134,10 +145,28 @@ positiveNumBtnSelect.forEach(button => button.addEventListener('click',
         }
     } else {
         outputString = newValue;
-       
+        operation.state = "none";  
     }
     document.getElementById('output').innerHTML = outputString;
 }));
+
+
+/******************************************************************************
+ *        Name: 
+ * Description: 
+ *   Arguments: 
+ *     Returns: 
+ *****************************************************************************/
+ subBtnSelect.addEventListener('click', function() {
+    operation.state = "sub";
+    console.log(operation.state);
+    if(number1 == "") {
+        operation.opButtonClicked = true;
+        number1 = outputString;
+    } else {
+        calculate(number1, outputString);
+    }
+});
 
 
 /******************************************************************************
